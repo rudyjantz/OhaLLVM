@@ -122,7 +122,7 @@ void BddPtstoSet::updateGeps(const Cg &cg) {
     auto &pr = alloc_sizes[i];
     // NOTE: We can have size 1 and 0 objects... although uncommon.  In that
     // case, ignore them!
-    assert(pr.second < std::numeric_limits<int32_t>::max());
+    // assert(pr.second < std::numeric_limits<int32_t>::max());
     auto size = (static_cast<int32_t>(pr.second));
     if (size < 0) {
       continue;
