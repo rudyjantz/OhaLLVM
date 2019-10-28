@@ -135,13 +135,13 @@ class InstrumentationSite {  //{{{
       VisitInst
     };
 
-    virtual bool operator<(const InstrumentationSite &is) const = 0;
-    virtual bool operator==(const InstrumentationSite &is) const = 0;
+    virtual bool operator<(const InstrumentationSite &is) const {}
+    virtual bool operator==(const InstrumentationSite &is) const {}
 
-    virtual int64_t approxCost() = 0;
-    virtual bool doInstrument(llvm::Module &m, const ExtLibInfo &ext_info);
+    virtual int64_t approxCost() {}
+    virtual bool doInstrument(llvm::Module &m, const ExtLibInfo &ext_info) {}
 
-    virtual llvm::BasicBlock *getBB() const = 0;
+    virtual llvm::BasicBlock *getBB() const {}
 
     static bool classof(const InstrumentationSite *) {
       return true;
@@ -162,7 +162,7 @@ class InstrumentationSite {  //{{{
 
  protected:
     explicit InstrumentationSite(Kind kind) : kind_(kind) { }
-    virtual void printInst(llvm::raw_ostream &o) const;
+    virtual void printInst(llvm::raw_ostream &o) const {}
 };
 //}}}
 
